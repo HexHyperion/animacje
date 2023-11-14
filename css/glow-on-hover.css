@@ -1,0 +1,126 @@
+.glow-on-hover{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    outline: none;
+    background: #0f0f0f;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+}
+.glow-on-hover::before{
+    content: '';
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    border-radius: 20px;
+}
+.glow-on-hover.clicked, .glow-on-hover:active{
+    transition: .5s;
+}
+
+/* 
+._.
+*/
+.glow-on-hover.clicked::after, .glow-on-hover:active::after,
+#option-1:checked ~ .option-1::after,
+#option-2:checked ~ .option-2::after,
+#option-3:checked ~ .option-3::after,
+#option-4:checked ~ .option-4::after,
+#option-5:checked ~ .option-5::after,
+#option-6:checked ~ .option-6::after,
+#option-7:checked ~ .option-7::after,
+#option-8:checked ~ .option-8::after,
+#option-9:checked ~ .option-9::after,
+#option-10:checked ~ .option-10::after{
+    background: transparent;
+    transition: .5s;
+}
+.glow-on-hover.clicked::before, .glow-on-hover:active::before, 
+#option-1:checked ~ .option-1::before,
+#option-2:checked ~ .option-2::before,
+#option-3:checked ~ .option-3::before,
+#option-4:checked ~ .option-4::before,
+#option-5:checked ~ .option-5::before,
+#option-6:checked ~ .option-6::before,
+#option-7:checked ~ .option-7::before,
+#option-8:checked ~ .option-8::before,
+#option-9:checked ~ .option-9::before,
+#option-10:checked ~ .option-10::before{
+    opacity: 1;
+    transition: .5s;
+}
+.glow-on-hover:hover::before{
+    opacity: 1;
+    transition: .5s;
+}
+.glow-on-hover::after{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0e0e0e;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+button{
+    padding: 20px;
+}
+button span{
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400%;
+    animation: glowing 20s linear infinite;
+    transition: opacity .5s ease-in-out;
+    color: transparent;
+    font-weight: 600;
+    font-size: 25px;
+}
+button.clicked span, button:active span, 
+#option-1:checked ~ .option-1 span,
+#option-2:checked ~ .option-2 span,
+#option-3:checked ~ .option-3 span,
+#option-4:checked ~ .option-4 span,
+#option-5:checked ~ .option-5 span,
+#option-6:checked ~ .option-6 span,
+#option-7:checked ~ .option-7 span,
+#option-8:checked ~ .option-8 span,
+#option-9:checked ~ .option-9 span,
+#option-10:checked ~ .option-10 span{
+    background-image: none;
+    font-weight: 600;
+    color: #000 !important;
+    transition: .5s;
+}
+
+.glow-on-hover[disabled]::before{
+    opacity: 1;
+    transition: .5s;
+}
+
+.glow-on-hover[disabled]::after{
+    background: transparent;
+    transition: .5s;
+}
+
+.glow-on-hover[disabled] span{
+    background-image: none;
+    font-weight: 600;
+    color: #000 !important;
+    transition: .5s;
+}

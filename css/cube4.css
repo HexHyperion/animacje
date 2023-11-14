@@ -1,0 +1,76 @@
+.test-area{
+    perspective: 1500px;
+}
+
+.cube {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(-15deg);
+}
+  
+.cube img{
+    width: 100%;
+}
+
+.test-area{
+    padding: 50px;
+    align-items: center;
+}
+
+.face {
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face img{
+    background-color: black;
+}
+
+.face p{
+    position: absolute;
+    font-size: 1.5em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    text-shadow: 0px 0px 10px black;
+}
+  
+.front {
+    transform: translateZ(120px);
+}
+.back {
+    transform: translateZ(-120px) rotateY(180deg);
+}
+.left {
+    transform: translateX(-120px) rotateY(-90deg);
+}
+.right {
+    transform: translateX(120px) rotateY(90deg);
+}
+.top {
+    transform: translateY(-120px) rotateX(90deg);
+}
+.bottom {
+    transform: translateY(120px) rotateX(-90deg);
+}
+
+.back img{
+    transform: rotate(-90deg);
+}
+.left img{
+    transform: rotate(180deg);
+}
+.right img{
+    transform: rotate(90deg);
+}
+.top img{
+    transform: rotate(180deg);
+} 
+.bottom img{
+    transform: rotate(-90deg);
+}

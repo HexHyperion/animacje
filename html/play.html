@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-play.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-play-state | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-play.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="javascript:void(0);" class="current">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-play-state</h1>
+                <p>Właściwość <span class="mono">animation-play-state</span> pozwala na "zamrożenie" wykonywania animacji i ponowne jej wznowienie.</p>
+                <p>Jeśli wartość <span class="mono c-it">paused</span> zostanie zastosowana w trakcie wykonywania animacji, to ta zostanie zatrzymana od razu, w miejscu, gdzie aktualnie się znajdowała. Po przywróceniu wartości <span class="mono c-it">running</span> animacja nie powróci do punktu początkowego, lecz rozpocznie się w miejscu, gdzie wcześniej się zatrzymała.</p>
+                <pre><span class="c-prop">animation-play-state</span>: <span class="c-val">running</span>|<span class="c-val">paused</span>;</pre>
+             
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="box" src="../img/box.png" alt="skrzynka">
+                    </div><div class="code-flex">
+<pre class="code"><span class="c-prop">animation-play-state</span>: <span class="c-val" id="play-swap">running</span>;
+<span class="c-prop">animation-iteration-count</span>: <span class="c-val">infinite</span>;
+    
+<span class="c-rule">@keyframes</span> <span class="c-name">obroc</span> {
+    <span class="c-key">from</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">0deg</span>);
+    }
+    <span class="c-key">to</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">360deg</span>);
+    }
+}</pre>
+                        <div class="js-code-swap">
+                            <form onchange="javascript:swap();"><fieldset>
+                                <input type="radio" name="select" id="option-1" value="test-1" checked>
+                                <input type="radio" name="select" id="option-2" value="test-2">
+                                <label for="option-1" class="option-1 glow-on-hover">
+                                    <span>running</span>
+                                </label>
+                                <label for="option-2" class="option-2 glow-on-hover">
+                                    <span>paused</span>
+                                </label>
+                                </fieldset>
+                            </form>
+                        </div></div></div>
+                    
+                        
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('timing.html')">
+                    <span>animation-timing-function</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('fill.html')">
+                    <span>animation-fill-mode</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

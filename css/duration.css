@@ -1,0 +1,21 @@
+pre{
+    background-color: #0f0f0f;
+    padding-inline: 35px;
+    padding-block: 20px;
+    border-radius: 20px;
+    font-family: "Ubuntu Mono Bold", monospace;
+    color: #b0b0b0;
+    font-size: 1.3em;
+    text-align: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+
+}
+body{
+    background-color: black;
+    height:100%;
+}
+
+
+

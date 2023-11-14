@@ -1,0 +1,370 @@
+@import "reset.css";
+@import "font.css";
+@import "keyframes.css";
+@import "menu.css";
+@import "glow-on-hover.css";
+
+*{
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+body{
+    background-color: #000;
+}
+
+main{
+    width: 100vw;
+    height: 100%;
+    justify-content: center;
+    
+}
+
+li{
+    color: #b0b0b0;
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+.index{
+    align-items: center;
+    flex-direction: column;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+    line-height: 1.3;
+    text-align: center;
+    margin-inline: auto;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 15px;
+}
+
+p{
+    color: #b0b0b0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+pre{
+    background-color: #0f0f0f;
+    padding-inline: 35px;
+    padding-block: 20px;
+    border-radius: 20px;
+    font-family: "Ubuntu Mono Bold", monospace;
+    color: #b0b0b0;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+table{
+    color: #b0b0b0;
+    font-size: 1.1em;
+    font-weight: 600;
+    background-color: #0f0f0f;
+    border-radius: 20px;
+    border-spacing: 200px;
+}
+
+th{
+    padding-top: 20px !important;
+}
+
+th:first-child,td:first-child{
+    padding-left: 30px !important;
+}
+
+td:last-child,th:last-child{
+    padding-right: 30px !important;
+}
+
+tr:last-child td{
+    padding-bottom: 20px !important;
+}
+
+th, td{
+    padding: 5px;
+}
+
+th{
+    font-weight: 900;
+}
+
+td:first-child{
+    font-family: "Ubuntu Mono", monospace;
+}
+
+#tab p{
+    margin-bottom: 20px;
+}
+
+#test{
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: test-1 2s linear infinite;
+}
+
+/* Ikonka rozwijania menu */
+lord-icon{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 11;
+}
+
+.header{
+	background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: glowing 20s linear infinite;
+}
+
+form > label{
+    font-weight: 600;
+}
+
+.start span{
+    color: #b0b0b0 !important;
+    font-size: 1.6em !important;
+}
+
+.prev{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+
+.code-flex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
+pre{
+    text-wrap: wrap;
+}
+
+.next{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+.prev span, .next span{
+    font-size: 1.3em;
+}
+
+span.glowing{
+	background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 400%;
+}
+
+.horizontal{
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.test-area{
+    height: 600px;
+    width: 600px;
+    position: relative;
+}
+
+.horizontal pre{
+    width: 400px;
+    height: fit-content;
+    font-size: 1.1em;
+}
+
+.mono{
+    font-family: "Ubuntu Mono Bold", monospace;
+}
+
+.option-1::before, .option-2::before, .option-3::before, .option-4::before, .option-5::before, .option-6::before, .option-7::before, .option-8::before{
+    top: -1px !important;
+    left:-1px !important;
+    width: calc(100% + 2px) !important;
+    height: calc(100% + 2px) !important;
+}
+/* uwu */
+fieldset label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #0f0f0f;
+    color: #b0b0b0;
+    font-size: 1.1em;
+    font-weight: 600;
+    height: fit-content;
+    width: 130px !important;
+    padding-block: 10px;
+    padding-inline: 20px;
+}
+
+
+fieldset label span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 360px;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #090909;
+    border-radius: 10px;
+    height: 20px;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #303030;
+    height: 20px;
+    width: 40px;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+ 
+input[type="range"]::-webkit-slider-thumb:active, input[type="range"]::-webkit-slider-thumb:hover {
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 100%);
+    background-size: 125%;
+    height: 24px;
+    width: 48px;
+    position: relative;
+    top: -2px;
+    transition: 0.1s;
+    filter: blur(2px);
+}
+
+
+input[type="range"]::-moz-range-track {
+    background-color: #090909;
+    border-radius: 10px;
+    height: 20px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #303030;
+    height: 20px;
+    width: 40px;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+ 
+input[type="range"]::-moz-range-thumb:active, input[type="range"]::-moz-range-thumb:hover {
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 100%);
+    background-size: 125%;
+    height: 24px;
+    width: 48px;
+    margin-top: -2px;
+    transition: 0.1s;
+    filter: blur(2px);
+}
+
+#test-1{
+    display: block;
+}
+
+#test-2, #test-3, #test-4, #test-5, #test-6, #test-7, #test-8{
+    display: none;
+}
+
+.c-rule{
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 350%;
+}
+
+.c-name{
+    color: #b6b6b6;
+    font-family: "Ubuntu Mono Italic", monospace;
+}
+
+.c-key{
+    background: linear-gradient(to right, #40c125 0%, #98a935 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 150%;
+}
+
+.c-prop{
+    background: linear-gradient(to right, #3acc75 0%, #0e7fa5 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 200%;
+}
+
+.c-val{
+    background: linear-gradient(to right, #8de1d4 0%, #6bc9e8 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 100%;
+}
+
+.c-text{
+    background: linear-gradient(to right, #e1db8d 0%, #e8c06b 100%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-size: 100%;
+}
+
+.c-it{
+    font-style: italic;
+}
+
+.strike{
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}

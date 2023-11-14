@@ -1,0 +1,36 @@
+.code{
+    width: 424px !important;
+}
+
+
+fieldset{
+    max-width: 424px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.test-area{
+    padding: 50px;
+    display: block;
+    text-align: left;
+    width: 800px !important;
+    height: fit-content;
+}
+
+#box{
+    height: 200px;
+    animation: none 3s 0;
+    animation-delay: 2s;    
+}
+
+fieldset label{
+    width: calc(50% - 20px / 2) !important;
+    margin: 0 !important;
+    height: fit-content !important;
+}
+
+fieldset button{
+    width: 100% !important;
+    height: fit-content !important;
+}

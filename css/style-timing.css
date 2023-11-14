@@ -1,0 +1,77 @@
+.code{
+    width: 424px !important;
+}
+
+
+fieldset{
+    max-width: 424px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+pre a:hover{
+    text-decoration: underline;
+}
+
+.test-area{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* text-align: left; */
+    justify-content: flex-start;
+    gap: 50px;
+    /* flex-wrap: wrap; */
+    width: 800px;
+    height: fit-content;
+    /* background-color: aquamarine; */
+}
+
+#box1, #box2{
+    height: 150px;
+    animation: szybkosc 3.5s infinite linear forwards;
+}
+
+fieldset label{
+    width: calc(50% - 20px / 2) !important;
+    margin: 0 !important;
+    height: fit-content !important;
+    gap: 20px;
+}
+
+
+fieldset label input[type="range"]{
+    width: none;
+    flex-basis: 100%;
+}
+
+.option-7, .option-8, .option-9, .option-10{
+    width: calc(25% - 60px / 4) !important;
+}
+
+.code{
+    width: 100% !important;
+}
+
+#steps-range{
+    overflow: hidden;
+    border-radius: 20px;
+    flex-basis: 100%;
+    /* width: 100%; */
+    opacity: 0;
+}
+
+#jumps {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    opacity: 0;
+}
+

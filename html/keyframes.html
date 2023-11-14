@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>@keyframes | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            #test {
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="javascript:void(0);" class="current">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">@keyframes</h1>
+                <p>Reguła @kysframes jest używana do tworzenia animacji, stopniowo zmieniając jeden lub wiele styli CSS elementów, do których jest przypisana. Składnia tej reguły wygląda następująco:</p>
+                <div>
+                    <pre><span class="c-rule">@keyframes</span> <span class="c-name">nazwa_animacji</span> {<span class="c-key">moment_wykonania</span> {<span class="c-prop">właściwość</span>: <span class="c-val">wartość</span>;}}</pre>
+                </div>
+                <p> W czasie trwania animacji zmiana może nastąpić dowolną liczbę razy i w dowolnym momencie. Moment zmiany stylu określamy za pomocą słów kluczowych <span class="mono">from</span> i <span class="mono">to</span> lub wartości podanych w procentach, np. <span class="mono">50%</span>. Selektory początku i końca powinny być zawsze zdefiniowane.</p>
+                <p>Jeżeli do właściwości w środku tej reguły dodana zostanie reguła <span class="mono">!important</span>, to właściwość taka zostanie całkowicie zignorowana.</p>
+
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="test" src="../img/box.png" alt="skrzynka">
+                    </div>
+<pre id="test-1" class="code active"><span class="c-rule">@keyframes</span> <span class="c-name">test-1</span> {
+    <span class="c-key">from</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">to</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+}</pre>
+<pre id="test-2" class="code"><span class="c-rule">@keyframes</span> <span class="c-name">test-2</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">25%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">50%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">75%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+}</pre>
+<pre id="test-3" class="code"><span class="c-rule">@keyframes</span> <span class="c-name">test-3</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>; <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">13.5%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>; <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">27%</span> {        
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>; <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">50%</span> {        
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>; <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">63.5%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>; <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">77%</span> {        
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>; <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>; <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+}</pre>
+<pre id="test-4" class="code"><span class="c-rule">@keyframes</span> <span class="c-name">test-4</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">25%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">350px</span>;
+    }
+    <span class="c-key">50%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">350px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+    <span class="c-key">75%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span> <span class="c-rule">!important</span>;
+        <span class="c-prop">left</span>: <span class="c-val">350px</span> <span class="c-rule">!important</span>;
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">top</span>: <span class="c-val">50px</span>;
+        <span class="c-prop">left</span>: <span class="c-val">50px</span>;
+    }
+}</pre>
+                    <div class="js-code-swap">
+                        <form onchange="javascript:swap();"><fieldset>
+                            <input type="radio" name="select" id="option-1" value="test-1" checked>
+                            <input type="radio" name="select" id="option-2" value="test-2">
+                            <input type="radio" name="select" id="option-3" value="test-3">
+                            <input type="radio" name="select" id="option-4" value="test-4">
+                            <label for="option-1" class="option-1 glow-on-hover">
+                                <span>from/to</span>
+                            </label>
+                            <label for="option-2" class="option-2 glow-on-hover">
+                                <span>0-100%</span>
+                            </label>
+                            <label for="option-3" class="option-3 glow-on-hover">
+                                <span>dziesiętne</span>
+                            </label>
+                            <label for="option-4" class="option-4 glow-on-hover">
+                                <span>!important</span>
+                            </label>
+                        </fieldset></form>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('../index.html')">
+                    <span>strona główna</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('transform.html')">
+                    <span>transform</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

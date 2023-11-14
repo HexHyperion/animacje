@@ -1,0 +1,17 @@
+.cube {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    transform-style: preserve-3d;
+}
+
+.cube img{
+    height: 80px;
+}
+
+/* 
+1. stworzyc divy
+2. szerokosc, wysokosc, font-size, bgcolor
+3. obrocenie faceów na miejsce
+4. hover i rotate
+*/

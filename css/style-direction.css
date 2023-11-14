@@ -1,0 +1,27 @@
+.code{
+    width: fit-content !important;
+}
+
+fieldset{
+    max-width: 439px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.test-area{
+    padding: 50px;
+    display: block;
+    text-align: left;
+}
+
+#box{
+    height: 200px;
+    animation: kierunek 4s infinite;
+    transform: translate(300px, 300px);
+}
+
+fieldset label{
+    width: calc(50% - 20px / 2) !important;
+    margin: 0 !important;
+}

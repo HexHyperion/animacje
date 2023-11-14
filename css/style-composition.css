@@ -1,0 +1,29 @@
+.test-area{
+    display: flex;
+    justify-content: center;
+    padding-block: 100px;
+}
+
+.code{
+    width: fit-content !important;
+}
+
+#box{
+    height: 250px;
+    transform: rotate(30deg);
+}
+
+.test-area:hover #box{
+    animation-composition: replace;
+    animation: laczenie 1s ease-in-out forwards;
+}
+
+fieldset label{
+    width: calc(100% / 3 - 40px / 3) !important;
+}
+
+fieldset{
+    display: flex;
+    gap: 20px;
+    width: 492px !important;
+}

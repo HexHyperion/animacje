@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-fill.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-fill-mode | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-fill.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html" >animation-play-state</a>
+                    <a href="javascript:void(0);" class="current">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-fill-mode</h1>
+                <p>Właściwość <span class="mono">animation-fill-mode</span> określa sposób stosowania stylów określonych w animacji przed jej rozpoczęciem i po jej zakończeniu.</p>
+                <p>Może ona sprawić, że w momencie zastosowania animacji do elementu, nawet jeśli posiada ona opóźnienie, to style zawarte w pierwszej napotkanej instrukcji (najczęściej 0%) są od razu stosowane. Możliwe jest również zachowanie stylów z ostatniej instrukcji (najczęściej 100%) po zakończeniu wykonywania animacji, a także połączenie tych dwóch zachowań.</p>
+                <pre><span class="c-prop">animation-fill-mode</span>: <span class="c-val">none</span>|<span class="c-val">forwards</span>|<span class="c-val">backwards</span>|<span class="c-val">both</span>;</pre>
+             
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="box" src="../img/box.png" alt="skrzynka">
+                    </div><div class="code-flex">
+<pre class="code"><span class="c-prop" id="long-swap">animation-fill-mode</span>: <span class="c-val" id="fill-swap">none</span>;
+<span class="c-prop" id="long-swap">animation-delay</span>: <span class="c-val">2s</span>;
+
+<span class="c-rule">@keyframes</span> <span class="c-name">dopelnienie</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">filter</span>: <span class="c-val">hue-rotate</span>(<span class="c-text">-200deg</span>);
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">0px</span>,<span class="c-text">0px</span>);
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">filter</span>: <span class="c-val">hue-rotate</span>(<span class="c-text">-110deg</span>);
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">500px</span>,<span class="c-text">0px</span>);
+    }
+}</pre>
+                    <div class="js-code-swap">
+                        <form oninput="javascript:swap();">
+                            <fieldset>
+                                <input type="radio" name="select" id="option-1" value="none" checked>
+                                <input type="radio" name="select" id="option-2" value="forw">
+                                <input type="radio" name="select" id="option-3" value="back">
+                                <input type="radio" name="select" id="option-4" value="both">
+                                <label for="option-1" class="option-1 glow-on-hover">
+                                    <span>none</span>
+                                </label>
+                                <label for="option-2" class="option-2 glow-on-hover">
+                                    <span>forwards</span>
+                                </label>
+                                <label for="option-3" class="option-3 glow-on-hover">
+                                    <span>backwards</span>
+                                </label>
+                                <label for="option-4" class="option-4 glow-on-hover">
+                                    <span>both</span>
+                                </label>
+                                <button class="glow-on-hover start" type="button" onclick="run_anim()" id="run-delay">
+                                    <span>Uruchom animację</span>
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div></div>
+                </div>
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('play.html')">
+                    <span>animation-play-state</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('composition.html')">
+                    <span>animation-composition</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

@@ -1,0 +1,25 @@
+.code{
+    width: 600px !important;
+}
+
+.test-area{
+    padding: 50px;
+    width: 500px !important;
+}
+
+.horizontal{
+    margin-top: 20px;
+    gap: 100px;
+}
+
+.code-flex{
+    flex-direction: row;
+}
+
+#test-1, #test-2{
+    width: 810px !important;
+}
+
+#test-area{
+    display: none;
+}

@@ -1,0 +1,59 @@
+@import url("keyframes.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pi: 3.14159265358979;
+  --cylinder-width: 1000px;
+  --face-count: 50;
+  --face-deg: calc(360deg / var(--face-count));
+  --face-width: calc(var(--cylinder-width) / var(--face-count));
+  --face-shift: calc(var(--cylinder-width) / var(--pi) / 2);
+}
+
+.test-area{
+  display: flex;
+  justify-content: center;
+}
+
+.holder {
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg);
+}
+
+.face {
+  position: absolute;
+  background-color: mediumaquamarine;
+  height: 100%;
+  opacity: 0.9;
+  border-block: 2px solid #404080;
+  width: var(--face-width);
+  transform: rotateY(calc(var(--face-deg) * var(--index))) translateZ(calc(var(--face-shift) - 4px));
+}
+
+
+.face:nth-child(3n){
+  background-color: mediumseagreen;
+}
+
+.face:nth-child(3n+1){
+  background-color: darkcyan;
+}
+
+.cylinder {
+  position: relative;
+  height: 500px;
+  transform-style: preserve-3d;
+  animation-name: spin;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.face:first-child {
+  border-left: 2px solid #404080;
+}

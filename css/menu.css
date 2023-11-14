@@ -1,0 +1,39 @@
+nav{
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    padding-top: 105px;
+    transition: 0.7s;
+    background-color: #000000;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+  
+nav a{
+    display: block;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #777;
+    font-size: 1.3em;
+    white-space: nowrap;
+}
+nav:nth-child(2) {
+    line-height: 1.2;
+}
+nav a:hover, .current{
+    color: transparent;
+    transition: .5s;
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 210%;
+}
+
+#menu a{
+    font-weight: 600;
+}
+

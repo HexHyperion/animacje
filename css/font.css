@@ -1,0 +1,28 @@
+@font-face{
+    font-family: "Quicksand";
+    src: url(../font/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face{
+    font-family: "Ubuntu Mono";
+    src: url(../font/UbuntuMono-Regular.ttf);
+}
+
+@font-face{
+    font-family: "Ubuntu Mono Italic";
+    src: url(../font/UbuntuMono-Italic.ttf);
+}
+
+@font-face{
+    font-family: "Ubuntu Mono Bold";
+    src: url(../font/UbuntuMono-Bold.ttf);
+}
+
+@font-face{
+    font-family: "Ubuntu Mono Bold Italic";
+    src: url(../font/UbuntuMono-BoldItalic.ttf);
+}
+
+*{
+    font-family: "Quicksand", sans-serif;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script.js" defer></script>
+        <script src="../js/script-timing.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-timing-function | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-timing.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="javascript:void(0);"  class="current">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+               
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-timing-function</h1>
+                <p>Właściwość <span class="mono">animation-timing-function</span> określa krzywą prędkości animacji, czyli jej szybkość wykonywania w danym czasie.</p>
+                <p>Pozwala to między innymi na jej płynne przyspieszenie przy starcie, płynne wyhamowanie na końcu, wykonanie całkowicie liniowe, a także przejście skokowe, w którym można określić ilość kroków. </p>
+                <pre><span class="c-prop">animation-timing-function</span>: <span class="c-val">linear</span>|<span class="c-val">ease</span>|<span class="c-val">ease-in</span>|<span class="c-val">ease-out</span>|<span class="c-val">ease-in-out</span>|<span class="c-val">steps</span>(<span class="c-text c-it">kroki</span>,<span class="c-text">jump-start</span>|<span class="c-text">jump-end</span>|<span class="c-text">jump-none</span>|<span class="c-text">jump-both</span>)|<a href="https://cubic-bezier.com"><span class="c-val">cubic-bezier</span>(<span class="c-text">x1</span>,<span class="c-text">y1</span>,<span class="c-text">x2</span>,<span class="c-text">y2</span>)</a>;</pre>
+             
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="box1" src="../img/box.png" alt="skrzynka">
+                        <img id="box2" src="../img/box.png" alt="skrzynka">
+                    </div><div class="code-flex">
+                    <pre class="code"><span class="c-prop" id="long-swap">animation-timing-function</span>: <span class="c-val" id="tim-swap">linear</span>;
+
+<span class="c-rule">@keyframes</span> <span class="c-name">szybkosc</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">0px</span>,<span class="c-text">0px</span>);
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">500px</span>,<span class="c-text">0px</span>);
+    }
+}</pre>
+<div class="js-code-swap">
+    <form>
+        <fieldset>
+            <input type="radio" name="select" id="option-1" value="linear" checked>
+            <input type="radio" name="select" id="option-2" value="ease">
+            <input type="radio" name="select" id="option-3" value="ease-in">
+            <input type="radio" name="select" id="option-4" value="ease-out">
+            <input type="radio" name="select" id="option-5" value="ease-in-out">
+            <input type="radio" name="select" id="option-6" value="steps">
+            <input type="radio" name="steps" id="option-7" value="start">
+            <input type="radio" name="steps" id="option-8" value="end">
+            <input type="radio" name="steps" id="option-9" value="none">
+            <input type="radio" name="steps" id="option-10" value="both">
+            <label for="option-1" class="option-1 glow-on-hover" onclick="changeCode(this); changeText(this);">
+                <span>linear</span>
+            </label>
+            <label for="option-2" class="option-2 glow-on-hover"  onclick="changeCode(this); changeText(this);">
+                <span>ease</span>
+            </label>
+            <label for="option-3" class="option-3 glow-on-hover" onclick="changeCode(this); changeText(this);">
+                <span>ease-in</span>
+            </label>
+            <label for="option-4" class="option-4 glow-on-hover" onclick="changeCode(this); changeText(this);">
+                <span>ease-out</span>
+            </label>
+            <label for="option-5" class="option-5 glow-on-hover" onclick="changeCode(this); changeText(this);">
+                <span>ease-in-out</span>
+            </label>
+            <label for="option-6" class="option-6 glow-on-hover" onclick="changeCode(this);" id="opt-6">
+                <span>steps(<span id="steps">3</span>)</span>
+            </label>
+            <label id="steps-range"><input type="range" name="value" id="x" value="3" min="0" max="15" step="1" oninput="javascript:swapText();" onchange="reloadBoxes(); updateCode(document.getElementById('opt-6'))">Kroki</label>
+            <div id="jumps">
+                <label for="option-7" class="option-7 glow-on-hover" onclick="changeCodeJump(this)">
+                    <span>jump-start</span>
+                </label>
+                <label for="option-8" class="option-8 glow-on-hover" onclick="changeCodeJump(this)">
+                    <span>jump-end</span>
+                </label>
+                <label for="option-9" class="option-9 glow-on-hover" onclick="changeCodeJump(this)">
+                    <span>jump-none</span>
+                </label>
+                <label for="option-10" class="option-10 glow-on-hover" onclick="changeCodeJump(this)">
+                    <span>jump-both</span>
+                </label>
+            </div>
+                
+            <!-- <button class="glow-on-hover start" type="button" onclick="run_anim()" id="run-delay">
+                <span>Uruchom animację</span>
+            </button> -->
+        </fieldset>
+    </form>
+</div></div></div>
+                        
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('direction.html')">
+                    <span>animation-direction</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('play.html')">
+                    <span>animation-play-state</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

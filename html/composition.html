@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-composition.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-composition | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-composition.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="javascript:void(0);" class="current">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-composition</h1>
+                <p>Właściwość <span class="mono">animation-composition</span> jest używana do określenia zachowania elementu w sytuacji, w której kilka różnych animacji modyfikuje go jednocześnie.</p>
+                <p>Domyślną wartością jest <span class="mono c-it">replace</span>, powoduje ona domyślne dla języka CSS nadpisanie mniej ważnej animacji. Możliwe jest jednak ustawienie, aby zostały one zastosowane niezależnie, lub żeby późniejsza animacja była zastosowana do efektu poprzedzającej.</p>
+                <pre><span class="c-prop">animation-composition</span>: <span class="c-val">replace</span>|<span class="c-val">add</span>|<span class="c-val">accumulate</span>;</pre>
+                <p>Poniższe pudełko jest na stałe obrócone o 30 stopni, a po najechaniu przesuwa się o 200px w dół:</p>
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="box" src="../img/box.png" alt="skrzynka">
+                    </div>
+                    <div class="code-flex">
+                    <pre id="test-1" class="code"><span class="c-prop">animation-composition</span>: <span class="c-val" id="comp-swap">replace</span>;
+
+<span class="c-text">#box</span>{
+    <span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">30deg</span>);
+}
+<span class="c-text">#box</span>:<span class="c-text">hover</span>{
+    <span class="c-prop">animation</span>: <span class="c-val">laczenie 1s ease-in-out forwards</span>;
+}
+
+<span class="c-rule">@keyframes</span> <span class="c-name">laczenie</span> {
+    <span class="c-key">0%</span> {<span class="c-prop">filter</span>: <span class="c-val">translateY</span>(<span class="c-text">0px</span>);}
+    <span class="c-key">100%</span> {<span class="c-prop">filter</span>: <span class="c-val">translateY</span>(<span class="c-text">200px</span>);}
+}
+</pre>
+                    <div class="js-code-swap">
+                        <form onchange="javascript:swap();"><fieldset>
+                            <input type="radio" name="select" id="option-1" value="replace" checked>
+                            <input type="radio" name="select" id="option-2" value="add">
+                            <input type="radio" name="select" id="option-3" value="accumulate">
+                            <label for="option-1" class="option-1 glow-on-hover">
+                                <span>replace</span>
+                            </label>
+                            <label for="option-2" class="option-2 glow-on-hover">
+                                <span>add</span>
+                            </label>
+                            <label for="option-3" class="option-3 glow-on-hover">
+                                <span>accumulate</span>
+                            </label>
+                            </fieldset>
+                        </form>
+                    </div></div>
+                </div>
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('fill.html')">
+                    <span>animation-fill-mode</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('animation.html')">
+                    <span>animation</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

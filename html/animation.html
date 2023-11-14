@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-animation.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html" >animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="javascript:void(0);" class="current">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation</h1>
+                <p>Właściwość skrótowa <span class="mono">animation</span> łączy osiem oddzielnych właściwości animacji w jedną.</p>
+                <p>Przyjmuje ona po kolei od jednej do ośmiu wartości, kolejno: nazwę animacji, jej czas trwania, krzywą prędkości, opóźnienie, ilość wykonań, kierunek wykonywania, sposób dopełnienia i stan wstrzymania. Niektóre z nich mogą być pominięte, niektóre mogą też zostać wpisane w innej kolejności.</p> <p>Style określone za pomocą właściwości skrótowych mogą być zmienione przez właściwości pojedyncze o wyższym priorytecie.</p>
+                <pre><span class="c-prop">animation</span>: <span class="c-val c-it">nazwa</span> <span class="c-val c-it">czas_trwania</span> <span class="c-val c-it">krzywa_prędkości</span> <span class="c-val c-it">opóźnienie</span> <span class="c-val c-it">ilość_wykonań</span> <span class="c-val c-it">kierunek</span> <span class="c-val c-it">tryb_dopełnienia</span> <span class="c-val c-it">stan_wstrzymania</span>;</pre>
+             
+                <div class="horizontal">
+                    
+                    <pre id="test-1" class="code"><span class="c-name">// Zamiast pisać:</span>
+<span class="c-prop">animation-name</span>: <span class="c-val">testowa_animacja</span>;
+<span class="c-prop">animation-duration</span>: <span class="c-val">5s</span>;
+<span class="c-prop">animation-timing-function</span>: <span class="c-val">linear</span>;
+<span class="c-prop">animation-delay</span>: <span class="c-val">2.5s</span>;
+<span class="c-prop">animation-iteration-count</span>: <span class="c-val">infinite</span>;
+<span class="c-prop">animation-direction</span>: <span class="c-val">alternate</span>;
+<span class="c-prop">animation-fill-mode</span>: <span class="c-val">forwards</span>;
+<span class="c-prop">animation-play-state</span>: <span class="c-val">paused</span>;
+
+<span class="c-name">// Można użyć:</span>
+<span class="c-prop">animation</span>: <span class="c-val c-it">test</span> <span class="c-val c-it">czas_trwania</span> <span class="c-val c-it">krzywa_prędkości</span> <span class="c-val c-it">opóźnienie</span> <span class="c-val c-it">ilość_wykonań</span> <span class="c-val c-it">kierunek</span> <span class="c-val c-it">tryb_dopełnienia</span> <span class="c-val c-it">stan_wstrzymania</span>;</pre>
+                        
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('composition.html')">
+                    <span>animation-composition</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('transition.html')">
+                    <span>transition</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

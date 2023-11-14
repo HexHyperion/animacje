@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-name.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-name, animation-duration | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-name.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="javascript:void(0);" class="current">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+             
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-name, animation-duration</h1>
+                <p>Właściwość <span class="mono">animation-name</span> określa nazwę animacji zdefiniowaną w regule <span class="mono">@keyframes</span>, niejako przypisując animację do elementu.</p>
+                <p>Właściwość <span class="mono">animation-duration</span> określa ile czasu powinna zająć animacja, aby ukończyć jeden cykl (0-100%). Jeśli czas ten nie został określony, animacja nie wykona się, ponieważ domyślną wartością tej właściwości jest 0s.</p>
+                <div>
+                    <pre><span class="c-prop">animation-name</span>: <span class="c-val c-it">nazwa_animacji</span>;<br><span class="c-prop">animation-duration</span>: <span class="c-val c-it">czas_trwania</span>;</pre>
+                </div>
+                <p>Pokazana poniżej animacja normalnie wykonałaby się tylko jeden raz, ponieważ nie jest określona ilość wykonań, jednak dla lepszego wyglądu została ona zapętlona.</p>
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img src="../img/box.png" alt="skrzynka" id="box">
+                    </div>
+                <div class="code-flex">
+<pre class="code"><span class="c-prop">animation-name</span>: <span class="c-val" id="name-swap">obroc</span>;
+<span class="c-prop">animation-duration</span>: <span class="c-val" id="duration-swap">5s</span>;
+    
+<span class="c-rule">@keyframes</span> <span class="c-name">obroc</span> {
+    <span class="c-key">from</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">0deg</span>);}
+    <span class="c-key">to</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">360deg</span>);}
+}
+
+<span class="c-rule">@keyframes</span> <span class="c-name">skaluj</span> {
+    <span class="c-key">0%</span> {<span class="c-prop">transform</span>: <span class="c-val">scale</span>(<span class="c-text">1</span>);}
+    <span class="c-key">50%</span> {<span class="c-prop">transform</span>: <span class="c-val">scale</span>(<span class="c-text">1.5</span>);}
+    <span class="c-key">100%</span> {<span class="c-prop">transform</span>: <span class="c-val">scale</span>(<span class="c-text">1</span>);}
+}</pre>
+                        <div class="js-code-swap">
+                            <form onchange="javascript:swap();"><fieldset>
+                                <input type="radio" name="select" id="option-1" value="test-1" checked>
+                                <input type="radio" name="select" id="option-2" value="test-2">
+                                <label for="option-1" class="option-1 glow-on-hover">
+                                    <span>obroc</span>
+                                </label>
+                                <label for="option-2" class="option-2 glow-on-hover">
+                                    <span>skaluj</span>
+                                </label>
+                                </fieldset>
+                                <label><input type="range" name="value" id="x" value="10" min="0" max="60" step="0.25" oninput="javascript:swapText();">Czas</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                                    
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('transform.html')">
+                    <span>transform</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('delay.html')">
+                    <span>animation-delay</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        <meta name="keywords" content="kysframes">
+        <script src="../js/script-delay.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-delay | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-delay.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="javascript:void(0);" class="current">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-delay</h1>
+                <p>Właściwość <span class="mono">animation-delay</span> opóźnia czas rozpoczęcia wykonania animacji, może też zmieniać stopień wykonania, w jakim zostanie ona uruchomiona.</p>
+                <p>Przyjmuje ona czas w sekundach lub milisekundach, dopuszczalne są zarówno wartości dodatnie jak i ujemne, domyślną jest 0s. W przypadku gdy wartość jest ujemna, animacja rozpocznie się tak, jakby była odtwarzana już przez podany czas.</p>
+                <div>
+                    <pre><span class="c-prop">animation-delay</span>: <span class="c-val c-it">długość_opóźnienia</span>;</pre>
+                </div>
+                
+                <div class="horizontal">
+                    <div class="test-area" id="area-delay">
+                        <img id="test-delay" src="../img/box.png" alt="skrzynka" class="anim-class">
+                    </div>
+                    <div class="code-flex">
+
+                    <pre class="code">
+<span class="c-prop">animation-delay</span>: <span class="c-val" id="delay-swap">3s</span>;
+
+<span class="c-rule">@keyframes</span> <span class="c-name">opoznienie</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">top</span>: <span class="c-val"><span id="start-loc">0px</span></span>;
+        <span class="c-prop">left</span>: <span class="c-val"><span id="start-loc-2">0px</span></span>;
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">top</span>: <span class="c-val"><span id="end-loc">380px</span></span>;
+        <span class="c-prop">left</span>: <span class="c-val"><span id="end-loc-2">380px</span></span>;
+    }
+}
+</pre>
+                    <div class="pasek-zmienny" style="--czas: 3;">
+                        <div id="pasek-delay"></div>
+                    </div>
+                    <form action="#" id="form-delay">
+                        <label id="x"><input type="range" name="value" value="3" min="-3" max="12" step="0.5" oninput="javascript:swapText();" id="delay-value">Opóźnienie</label>
+                        <button class="glow-on-hover start" type="button" onclick="run_anim()" id="run-delay">
+                            <span>Uruchom animację</span>
+                        </button>
+                        
+                    </form>
+                    
+                </div>
+
+                </div>
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('name.html')">
+                    <span>animation-name</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('iteration.html')">
+                    <span>animation-iteration-count</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

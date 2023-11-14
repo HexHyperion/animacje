@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-direction.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>animation-direction | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-direction.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html" >animation-delay</a>
+                    <a href="iteration.html" >animation-iteration-<br>count</a>
+                    <a href="javascript:void(0);" class="current">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">animation-direction</h1>
+                <p>Właściwość <span class="mono">animation-direction</span> określa kierunek, w jakim animacja jest wykonywana, czyli kolejność wykonywania instrukcji w niej zawartych.</p>
+                <p>Może ona poruszać się tylko do przodu, tylko do tyłu lub na zmianę, w przypadku ruchu na zmianę można wybrać kierunek rozpoczęcia. Wartością domyślną jest <span class="mono c-it">normal</span>.</p>
+                <pre><span class="c-prop">animation-direction</span>: <span class="c-val">normal</span>|<span class="c-val">reverse</span>|<span class="c-val">alternate</span>|<span class="c-val">alternate-reverse</span>;</pre>
+             
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img id="box" src="../img/box.png" alt="skrzynka">
+                    </div>
+                    <div class="code-flex">
+                    <pre id="test-1" class="code"><span class="c-prop">animation-direction</span>: <span class="c-val" id="dir-swap">normal</span>;
+
+<span class="c-rule">@keyframes</span> <span class="c-name">kierunek</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">0px</span>,<span class="c-text">0px</span>);
+    }
+    <span class="c-key">25%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">300px</span>,<span class="c-text">0px</span>);
+    }
+    <span class="c-key">50%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">300px</span>,<span class="c-text">300px</span>);
+    }
+    <span class="c-key">75%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">0px</span>,<span class="c-text">300px</span>);
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">translate</span>(<span class="c-text">0px</span>,<span class="c-text">0px</span>);
+    }
+}</pre>
+                    <div class="js-code-swap">
+                        <form onchange="javascript:swap();"><fieldset>
+                            <input type="radio" name="select" id="option-1" value="normal" checked>
+                            <input type="radio" name="select" id="option-2" value="reverse">
+                            <input type="radio" name="select" id="option-3" value="alternate">
+                            <input type="radio" name="select" id="option-4" value="alternate-reverse">
+                            <label for="option-1" class="option-1 glow-on-hover">
+                                <span>normal</span>
+                            </label>
+                            <label for="option-2" class="option-2 glow-on-hover">
+                                <span>reverse</span>
+                            </label>
+                            <label for="option-3" class="option-3 glow-on-hover">
+                                <span>alternate</span>
+                            </label>
+                            <label for="option-4" class="option-4 glow-on-hover">
+                                <span>alternate-reverse</span>
+                            </label>
+                            </fieldset>
+                        </form>
+                    </div></div>
+                </div>
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('iteration.html')">
+                    <span>animation-iteration-count</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('timing.html')">
+                    <span>animation-timing-function</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

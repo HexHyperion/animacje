@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-szescian.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>Jak stworzyć sześcian? | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cube.css">
+        <link rel="stylesheet" href="../css/cube1.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="javascript:void(0);" class="current">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">Jak stworzyć sześcian?</h1>
+                <p>Ta strona pokazuje, w jaki sposób można stworzyć sześcian 3D za pomocą wyłącznie HTMLa i CSSa. Na jego ścianach można umieścić praktycznie dowolne elementy, a końcowy kształt może być dowolnie przekształcany bez wpływu na wygląd, w tym przykładzie obraca się on po najechaniu.</p>
+                <div class="horizontal">
+                    <div class="test-area" id="test-area">
+                        <div class="cube" id="box">
+                            <div class="face top"><img src="../img/box-cube.png" alt="box"><p>Góra</p></div>
+                            <div class="face bottom"><img src="../img/box-cube.png" alt="box"><p>Dół</p></div>
+                            <div class="face left"><img src="../img/box-cube.png" alt="box"><p>Lewa</p></div>
+                            <div class="face right"><img src="../img/box-cube.png" alt="box"><p>Prawa</p></div>
+                            <div class="face front"><img src="../img/box-cube.png" alt="box"><p>Przód</p></div>
+                            <div class="face back"><img src="../img/box-cube.png" alt="box"><p>Tył</p></div>
+                        </div>
+                    </div><div class="code-flex">
+<pre id="test-1" class="code">&lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"cube"</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face top"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Góra &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face bottom"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Dół &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face left"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Lewa &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face right"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Prawa &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face front"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Przód &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face back"</span>&gt;
+        &lt;<span class="c-rule">img</span> <span class="c-val">src</span>=<span class="c-text">"box-cube.png"</span> <span class="c-val">alt</span>=<span class="c-text">"box"</span>&gt;
+        &lt;<span class="c-rule">p</span>&gt; Tył &lt;/<span class="c-rule">p</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+&lt;/<span class="c-rule">div</span>&gt;</pre>
+<pre id="test-2" class="code"><span class="c-text">.cube</span> {
+    <span class="c-prop">position</span>: <span class="c-val">relative</span>;
+    <span class="c-prop">width</span>: <span class="c-val">240px</span>;
+    <span class="c-prop">height</span>: <span class="c-val">240px</span>;
+    <span class="c-prop">transform-style</span>: <span class="c-val">preserve-3d</span>;
+}
+
+<span class="c-text">.cube img</span> {
+    <span class="c-prop">width</span>: <span class="c-val">50px</span>;         <span class="c-name">// tymczasowe</span>
+}</pre>
+<pre id="test-3" class="code"><span class="c-text">.face</span> {
+    <span class="c-prop">width</span>: <span class="c-val">240px</span>;
+    <span class="c-prop">height</span>: <span class="c-val">240px</span>;
+    <span class="c-prop">position</span>: <span class="c-val">absolute</span>;
+    <span class="c-prop">display</span>: <span class="c-val">flex</span>;
+    <span class="c-prop">align-items</span>: <span class="c-val">center</span>;
+    <span class="c-prop">justify-content</span>: <span class="c-val">center</span>;
+}
+
+<span class="c-text">.face p</span> {
+    <span class="c-prop">position</span>: <span class="c-val">absolute</span>;
+    <span class="c-prop">text-shadow</span>: <span class="c-val">0px 0px 10px black</span>;
+    <span class="c-prop">align-items</span>: <span class="c-val">center</span>;
+    <span class="c-prop">justify-content</span>: <span class="c-val">center</span>;
+}
+
+<span class="c-text">.face img</span> {
+    <span class="strike"><span class="c-prop">width</span>: <span class="c-val">50px</span>;</span>
+    <span class="c-prop">width</span>: <span class="c-val">100%</span>;
+    <span class="c-prop">background-color</span>: <span class="c-val">black</span>;
+}</pre>
+<pre id="test-4" class="code"><span class="c-text c-it">element_nadrzedny</span> {<span class="c-prop">perspective</span>: <span class="c-val">1500px</span>;}
+
+<span class="c-text">.front</span> {<span class="c-prop">transform</span>: <span class="c-val">translateZ</span>(<span class="c-text">120px</span>);}
+<span class="c-text">.back</span> {<span class="c-prop">transform</span>: <span class="c-val">translateZ</span>(<span class="c-text">-120px</span>) <span class="c-val">rotateY</span>(<span class="c-text">180deg</span>);}
+<span class="c-text">.left</span> {<span class="c-prop">transform</span>: <span class="c-val">translateX</span>(<span class="c-text">-120px</span>) <span class="c-val">rotateY</span>(<span class="c-text">-90deg</span>);}
+<span class="c-text">.right</span> {<span class="c-prop">transform</span>: <span class="c-val">translateX</span>(<span class="c-text">120px</span>) <span class="c-val">rotateY</span>(<span class="c-text">90deg</span>);}
+<span class="c-text">.top</span> {<span class="c-prop">transform</span>: <span class="c-val">translateY</span>(<span class="c-text">-120px</span>) <span class="c-val">rotateX</span>(<span class="c-text">90deg</span>);}
+<span class="c-text">.bottom</span> {<span class="c-prop">transform</span>: <span class="c-val">translateY</span>(<span class="c-text">120px</span>) <span class="c-val">rotateX</span>(<span class="c-text">-90deg</span>);}
+
+<span class="c-text">.back img</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">-90deg</span>);}
+<span class="c-text">.left img</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">180deg</span>);}
+<span class="c-text">.right img</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">90deg</span>);}
+<span class="c-text">.top img</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">180deg</span>);}
+<span class="c-text">.bottom img</span> {<span class="c-prop">transform</span>: <span class="c-val">rotate</span>(<span class="c-text">-90deg</span>);}
+
+</pre>
+<pre id="test-5" class="code"><span class="c-text">.cube</span> {
+    &middot;&middot;&middot;
+    <span class="strike"><span class="c-prop">transform</span>: <span class="c-val">rotateX</span>(<span class="c-text">-15deg</span>) <span class="c-val">rotateY</span>(<span class="c-text">-15deg</span>);</span>
+    <span class="c-prop">transition-property</span>: <span class="c-val">transform</span>;
+    <span class="c-prop">transition-duration</span>: <span class="c-val">1.5s</span>;
+    <span class="c-prop">transition-timing-function</span>: <span class="c-val">ease-in-out</span>;
+}
+
+<span class="c-text">.cube:hover</span> {
+    <span class="c-prop">transition-property</span>: <span class="c-val">transform</span>;
+    <span class="c-prop">transition-duration</span>: <span class="c-val">1.5s</span>;
+    <span class="c-prop">transition-timing-function</span>: <span class="c-val">ease-in-out</span>;
+    <span class="c-prop">transform</span>: <span class="c-val">rotateX</span>(<span class="c-text">-15deg</span>) <span class="c-val">rotateY</span>(<span class="c-text">-60deg</span>);
+}</pre>
+
+
+                    <div class="js-code-swap">
+                        <form onchange="javascript:swap();"><fieldset>
+                            <input type="radio" name="select" id="option-1" value="test-1" checked>
+                            <input type="radio" name="select" id="option-2" value="test-2">
+                            <input type="radio" name="select" id="option-3" value="test-3">
+                            <input type="radio" name="select" id="option-4" value="test-4">
+                            <input type="radio" name="select" id="option-5" value="test-5">
+                            <label for="option-1" class="option-1 glow-on-hover">
+                                <span>div'y</span>
+                            </label>
+                            <label for="option-2" class="option-2 glow-on-hover">
+                                <span>.cube</span>
+                            </label>
+                            <label for="option-3" class="option-3 glow-on-hover">
+                                <span>.face</span>
+                            </label>
+                            <label for="option-4" class="option-4 glow-on-hover">
+                                <span>ułożenie</span>
+                            </label>
+                            <label for="option-5" class="option-5 glow-on-hover">
+                                <span>:hover</span>
+                        </fieldset></form></div>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('transition.html')">
+                    <span>transition</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('walec.html')">
+                    <span>walec</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

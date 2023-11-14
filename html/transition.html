@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-name.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>transition | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-transition.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="javascript:void(0);" class="current">transition</a>
+                    
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">transition</h1>
+                <p>Chociaż do tworzenia skomplikowanych animacji wymagane są właściwości z rodziny <span class="mono">animation</span>, to aby stworzyć proste zmiany pojedynczych właściwości można użyć właściwości <span class="mono">transition</span>, do których należą <span class="mono">-delay</span>, <span class="mono">-duration</span>, <span class="mono">-property</span> i <span class="mono">-timing-function</span>.</p>
+                <p>Pozwalają one płynnie zmienić daną właściwość dla konkretnego elementu, jednak służą one tylko jako dodatek - same z siebie nie spowodują zmiany na stronie.</p>
+                <div>
+                    <pre><span class="c-prop">transition-duration</span>: <span class="c-val c-it">czas_przejścia</span>;<br><span class="c-prop">transition-delay</span>: <span class="c-val c-it">długość_opóźnienia</span>;<br><span class="c-prop">transition-property</span>: <span class="c-val c-it">zmieniana_właściwość</span>;<br><span class="c-prop">transition-timing-function</span>: <span class="c-val c-it">krzywa_prędkości</span>;<br><span class="c-prop">transition</span>: <span class="c-val c-it">właściwość</span> <span class="c-val c-it">czas_przejścia</span> <span class="c-val c-it">krzywa_prędkości</span> <span class="c-val c-it">opóźnienie</span>;</pre>
+                </div>
+                <p>Jeśli dla jednego elementu chcemy ustawić więcej niż jedną właściwość <span class="mono">transition</span>, należy to zrobić za pomocą właściwości skrótowej, wypisując kolejne zestawy wartości po przecinku. Zostało to zaprezentowane na poniższym przykładzie:</p>
+                <div class="horizontal">
+                    <div class="test-area">
+                        <img src="../img/box.png" alt="skrzynka" id="box">
+                    </div>
+                <div class="code-flex">
+<pre class="code"><span class="c-text">#box</span> {
+    <span class="c-prop">height</span>: <span class="c-val">200px</span>;
+    <span class="c-prop">transition</span>: <span class="c-val">filter 5s linear</span>, <span class="c-val">height 2s ease-in-out</span>;
+}
+
+<span class="c-text">#box</span>:<span class="c-text">hover</span> {
+    <span class="c-prop">height</span>: <span class="c-val">320px</span>;
+    <span class="c-prop">filter</span>: <span class="c-val">hue-rotate</span>(<span class="c-text">-110deg</span>);
+    <span class="c-prop">transition-property</span>: <span class="c-val">height</span>;
+    <span class="c-prop">transition-duration</span>: <span class="c-val">2s</span>;
+    <span class="c-prop">transition-timing-function</span>: <span class="c-val">ease-in</span>;
+    <span class="c-prop">transition-delay</span>: <span class="c-val">1s</span>;
+}</pre>
+                    </div>
+                </div>
+                                    
+            </section>
+
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('animation.html')">
+                    <span>animation</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('szescian.html')">
+                    <span>sześcian</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

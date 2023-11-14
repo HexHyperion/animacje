@@ -1,0 +1,38 @@
+fieldset label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #0f0f0f;
+    color: #b0b0b0;
+    font-size: 1.1em !important;
+    font-weight: 900 !important;
+    height: 50px !important;
+    padding-block: 10px;
+    padding-inline: 10px;
+    margin: 0 !important;
+}
+
+fieldset label span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content !important;
+    width: fit-content !important;
+}
+
+form > label{
+    padding: 10px;
+    background-color: #0f0f0f;
+    border-radius: 20px;
+    margin-block: 20px;
+    color: #b0b0b0;
+    font-weight: 600;
+    font-size: 1.1em;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 20px;
+}

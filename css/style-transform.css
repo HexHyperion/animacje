@@ -1,0 +1,126 @@
+fieldset label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #0f0f0f;
+    color: #b0b0b0;
+    font-size: 1.1em !important;
+    font-weight: 900 !important;
+    height: 50px !important;
+    width: calc(25% - 60px / 4) !important;
+    padding-block: 10px;
+    padding-inline: 10px;
+    margin: 0 !important;
+}
+
+fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+label:has(input[disabled]) input[type="range"]::-webkit-slider-thumb{
+    display: none !important;
+}
+
+label:has(input[disabled]) input[type="range"]::-moz-range-thumb{
+    display: none;
+}
+
+form > label{
+    padding-block: 10px;
+    display: none;
+    background-color: #0f0f0f;
+    border-radius: 20px;
+    margin-block: 20px;
+    color: #b0b0b0;
+    font-weight: 600;
+    font-size: 1.1em;
+    width: fit-content;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 20px;
+}
+
+#horizontal{
+    display: none;
+}
+
+.test-area{
+    width: 800px !important;
+    height: 500px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    transform-style: preserve-3d;
+}
+  
+.cube img{
+    width: 100%;
+}
+
+.face {
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    
+}
+
+.face img{
+    background-color: black;
+}
+
+.face p{
+    position: absolute;
+    font-size: 1.5em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 900;
+    text-shadow: 0px 0px 10px black;
+}
+  
+.front {
+    transform: translateZ(120px);
+}
+.back {
+    transform: translateZ(-120px) rotateY(180deg);
+}
+.left {
+    transform: translateX(-120px) rotateY(-90deg);
+}
+.right {
+    transform: translateX(120px) rotateY(90deg);
+}
+.top {
+    transform: translateY(-120px) rotateX(90deg);
+}
+.bottom {
+    transform: translateY(120px) rotateX(-90deg);
+}
+
+.back img{
+    transform: rotate(-90deg);
+}
+.left img{
+    transform: rotate(180deg);
+}
+.right img{
+    transform: rotate(90deg);
+}
+.top img{
+    transform: rotate(180deg);
+} 
+.bottom img{
+    transform: rotate(-90deg);
+}

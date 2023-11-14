@@ -1,0 +1,58 @@
+@import "reset.css";
+@import "font.css";
+@import "keyframes.css";
+@import "menu.css";
+@import "glow-on-hover.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-weight: 900;
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 50%, #30cfd0 100%);
+    background-clip: text;
+    background-size: 400%;
+    height: 110px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 100px;
+    animation: glowing 20s linear infinite;
+}
+
+p{
+    color: #b0b0b0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+section{
+    text-align: center;
+    position: relative;
+    top: -40px;
+}
+
+button{
+    margin-top: 25px;
+}
+
+/* Ikonka rozwijania menu */
+lord-icon{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 11;
+}

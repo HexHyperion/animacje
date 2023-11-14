@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-walec.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>Jak stworzyć walec? | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cylinder.css">
+        <link rel="stylesheet" href="../css/cylinder1.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="javascript:void(0);" class="current">@keyframes</a>
+                    <a href="transform.html">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">Jak stworzyć walec?</h1>
+                <p>Ta strona pokazuje, w jaki sposób można stworzyć element 3D przypominający walec za pomocą wyłącznie HTMLa i CSSa. Końcowy kształt obraca się wokół własnej osi, a na jego bokach umieszczony jest obraz. Przekształcając element .holder można dowolnie obracać walcem bez wpływu na zawartość.</p>
+                <div class="horizontal">
+                    <div class="test-area" id="test-area">
+                        <div class="holder">
+                            <div class="cylinder">
+                              <div class="face" style="--index:0;"></div>                          
+                              <div class="face" style="--index:1"></div>
+                              <div class="face" style="--index:2"></div>
+                              <div class="face" style="--index:3"></div>
+                              <div class="face" style="--index:4"></div>
+                              <div class="face" style="--index:5"></div>
+                              <div class="face" style="--index:6"></div>
+                              <div class="face" style="--index:7"></div>
+                              <div class="face" style="--index:8"></div>
+                              <div class="face" style="--index:9"></div>
+                              <div class="face" style="--index:10"></div>
+                              <div class="face" style="--index:11"></div>
+                              <div class="face" style="--index:12"></div>
+                              <div class="face" style="--index:13"></div>
+                              <div class="face" style="--index:14"></div>
+                              <div class="face" style="--index:15"></div>
+                              <div class="face" style="--index:16"></div>
+                              <div class="face" style="--index:17"></div>
+                              <div class="face" style="--index:18"></div>
+                              <div class="face" style="--index:19"></div>
+                              <div class="face" style="--index:20"></div>
+                              <div class="face" style="--index:21"></div>
+                              <div class="face" style="--index:22"></div>
+                              <div class="face" style="--index:23"></div>
+                              <div class="face" style="--index:24"></div>
+                              <div class="face" style="--index:25"></div>
+                              <div class="face" style="--index:26"></div>
+                              <div class="face" style="--index:27"></div>
+                              <div class="face" style="--index:28"></div>
+                              <div class="face" style="--index:29"></div>
+                              <div class="face" style="--index:30"></div>
+                              <div class="face" style="--index:31"></div>
+                              <div class="face" style="--index:32"></div>
+                              <div class="face" style="--index:33"></div>
+                              <div class="face" style="--index:34"></div>
+                              <div class="face" style="--index:35"></div>
+                              <div class="face" style="--index:36"></div>
+                              <div class="face" style="--index:37"></div>
+                              <div class="face" style="--index:38"></div>
+                              <div class="face" style="--index:39"></div>
+                              <div class="face" style="--index:40"></div>
+                              <div class="face" style="--index:41"></div>
+                              <div class="face" style="--index:42"></div>
+                              <div class="face" style="--index:43"></div>
+                              <div class="face" style="--index:44"></div>
+                              <div class="face" style="--index:45"></div>
+                              <div class="face" style="--index:46"></div>
+                              <div class="face" style="--index:47"></div>
+                              <div class="face" style="--index:48"></div>
+                              <div class="face" style="--index:49;"></div>
+    
+                            </div>
+                          </div>
+                    </div><div class="code-flex">
+<pre id="test-1" class="code"><span class="c-name">&lt;!-- 
+Przydatne do stworzenia tej struktury mogą się okazać skróty Emmet: 
+
+    div.face[style="--index:$"]*50
+
+stworzy 50 div'ów o klasie face z wartościami index od 0 do 49 (przyda się później)
+--&gt;</span>
+
+&lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"holder"</span>&gt;
+    &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"cylinder"</span>&gt;
+        &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face"</span> <span class="c-val">style</span>=<span class="c-text">"--index:1"</span>&gt;&lt;/<span class="c-rule">div</span>&gt;
+        &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face"</span> <span class="c-val">style</span>=<span class="c-text">"--index:2"</span>&gt;&lt;/<span class="c-rule">div</span>&gt;
+        &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face"</span> <span class="c-val">style</span>=<span class="c-text">"--index:3"</span>&gt;&lt;/<span class="c-rule">div</span>&gt;
+        &middot;&middot;&middot;
+        &lt;<span class="c-rule">div</span> <span class="c-val">class</span>=<span class="c-text">"face"</span> <span class="c-val">style</span>=<span class="c-text">"--index:50"</span>&gt;&lt;/<span class="c-rule">div</span>&gt;
+    &lt;/<span class="c-rule">div</span>&gt;
+&lt;/<span class="c-rule">div</span>&gt;</pre>
+<pre id="test-2" class="code"><span class="c-text">:root</span> {
+  <span class="c-prop">--pi</span>: <span class="c-val">3.14159265358979</span>;
+  <span class="c-prop">--cylinder-width</span>: <span class="c-val">1000px</span>;
+  <span class="c-prop">--face-count</span>: <span class="c-val">50</span>;
+  <span class="c-prop">--face-deg</span>: <span class="c-val">calc</span>(<span class="c-text">360deg</span> / <span class="c-val">var</span>(<span class="c-text">--face-count</span>));
+  <span class="c-prop">--face-width</span>: <span class="c-val">calc</span>(<span class="c-val">var</span>(<span class="c-text">--cylinder-width</span>) / <span class="c-val">var</span>(<span class="c-text">--face-count</span>));
+  <span class="c-prop">--face-shift</span>: <span class="c-val">calc</span>(<span class="c-val">var</span>(<span class="c-text">--cylinder-width</span>) / <span class="c-val">var</span>(<span class="c-text">--pi</span>) / <span class="c-val">2</span>);
+}</pre>
+<pre id="test-3" class="code"><span class="c-text">.holder</span> {
+    <span class="c-prop">transform-style</span>: <span class="c-val">preserve-3d</span>;
+    <span class="c-prop">transform</span>: <span class="c-val">rotateX</span>(<span class="c-text">-15deg</span>);
+}
+
+<span class="c-text">.cylinder</span> {
+    <span class="c-prop">height</span>: <span class="c-val">500px</span>;
+    <span class="c-prop">transform-style</span>: <span class="c-val">preserve-3d</span>;
+    <span class="c-prop">position</span>: <span class="c-val">relative</span>;
+}</pre>
+<pre id="test-4" class="code"><span class="c-text">.face</span> {
+    <span class="c-prop">position</span>: <span class="c-val">absolute</span>;
+    <span class="c-prop">background-color</span>: <span class="c-val">mediumaquamarine</span>;
+    <span class="c-prop">height</span>: <span class="c-val">100%</span>;
+    <span class="c-prop">width</span>: <span class="c-val">100px</span>;        <span class="c-name">// tymczasowe, pokazuje .face'y</span>
+    <span class="c-prop">opacity</span>: <span class="c-val">0.9</span>;
+    <span class="c-prop">border-block</span>: <span class="c-val">2px solid #404080</span>;
+}
+
+<span class="c-text">.face:nth-child</span>(<span class="c-text">3n</span>) {
+    <span class="c-prop">background-color</span>: <span class="c-val">mediumseagreen</span>;
+}
+<span class="c-text">.face:first-child</span> {
+    <span class="c-prop">background-color</span>: <span class="c-val">darkcyan</span>;
+}</pre>
+<pre id="test-5" class="code"><span class="c-text">.face</span> {
+    &middot;&middot;&middot;
+    <span class="strike"><span class="c-prop">width</span>: <span class="c-val">100px</span>;</span>
+    <span class="c-prop">width</span>: <span class="c-val">var</span>(<span class="c-text">--face-width</span>);
+    <span class="c-prop">transform</span>: <span class="c-val">rotateY</span>(<span class="c-val">calc</span>(<span class="c-val">var</span>(<span class="c-text">--face-deg</span>) * <span class="c-val">var</span>(<span class="c-text">--index</span>)))
+               <span class="c-val">translateZ</span>(<span class="c-val">calc</span>(<span class="c-val">var</span>(<span class="c-text">--face-shift</span>) - <span class="c-val">4px</span>));
+}
+
+<span class="c-text">.face:first-child</span> {
+    <span class="c-prop">border-left</span>: <span class="c-val">2px solid #404080</span>;
+}</pre>
+<pre id="test-6" class="code"><span class="c-text">.cylinder</span> {
+    &middot;&middot;&middot;
+    <span class="c-prop">animation-name</span>: <span class="c-val">spin</span>;
+    <span class="c-prop">animation-duration</span>: <span class="c-val">20s</span>;
+    <span class="c-prop">animation-timing-function</span>: <span class="c-val">linear</span>;
+    <span class="c-prop">animation-iteration-count</span>: <span class="c-val">infinite</span>;
+}
+    
+<span class="c-rule">@keyframes</span> <span class="c-name">spin</span> {
+    <span class="c-key">0%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">rotateY</span>(<span class="c-text">0deg</span>);
+    }
+    <span class="c-key">100%</span> {
+        <span class="c-prop">transform</span>: <span class="c-val">rotateY</span>(<span class="c-text">360deg</span>);
+    }
+}</pre>
+<pre id="test-7" class="code"><span class="c-text">.face</span> {
+    &middot;&middot;&middot;
+    <span class="c-prop">background</span>: <span class="c-val">url</span>(<span class="c-text">"../img/galaxy.png"</span>);
+    <span class="c-prop">background-size</span>: <span class="c-val">1000px</span>;
+    <span class="c-prop">background-position</span>: <span class="c-val">calc</span>(<span class="c-val">var</span>(<span class="c-text">--index</span>) *
+                         <span class="c-val">var</span>(<span class="c-text">--face-width</span>) * <span class="c-val">-1</span>)
+}
+
+<span class="c-name">&lt;!-- Skończone! Od teraz walec powinien mieć obrazek i obracać się wokół własnej osi --&gt;</span></pre>
+
+                    <div class="js-code-swap">
+                        <form onchange="javascript:swap();"><fieldset>
+                            <input type="radio" name="select" id="option-1" value="test-1" checked>
+                            <input type="radio" name="select" id="option-2" value="test-2">
+                            <input type="radio" name="select" id="option-3" value="test-3">
+                            <input type="radio" name="select" id="option-4" value="test-4">
+                            <input type="radio" name="select" id="option-5" value="test-5">
+                            <input type="radio" name="select" id="option-6" value="test-6">
+                            <input type="radio" name="select" id="option-7" value="test-7">
+                            <label for="option-1" class="option-1 glow-on-hover">
+                                <span>div'y</span>
+                            </label>
+                            <label for="option-2" class="option-2 glow-on-hover">
+                                <span>zmienne</span>
+                            </label>
+                            <label for="option-3" class="option-3 glow-on-hover">
+                                <span>.cylinder</span>
+                            </label>
+                            <label for="option-4" class="option-4 glow-on-hover">
+                                <span>.face</span>
+                            </label>
+                            <label for="option-5" class="option-5 glow-on-hover">
+                                <span>zawinięcie</span>
+                            </label>
+                            <label for="option-6" class="option-6 glow-on-hover">
+                                <span>obracanie</span>
+                            </label>
+                            <label for="option-7" class="option-7 glow-on-hover">
+                                <span>obrazek</span>
+                            </label>
+                        </fieldset></form></div>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('szescian.html')">
+                    <span>sześcian</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('adios.html')">
+                    <span>koniec?</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>

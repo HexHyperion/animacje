@@ -1,0 +1,83 @@
+@import "buttons.css";
+
+#run-delay {
+    margin-top: 20px;
+    width: 100%; 
+}
+
+#x {
+    width: 400px;
+    padding-block: 10px;
+    padding-inline: 20px;
+    margin: 0;
+}
+
+.t
+
+#form-delay{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+/* 
+label {
+    width: 100%;
+} */
+
+
+#test-delay {
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: 2s; */
+    /* transition-delay: 3s; */
+    
+}
+
+.anim-class {
+    animation-name: delay1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 0;
+    animation-delay: 3s;
+    animation-duration: 3s;
+}
+
+
+@keyframes delay1 {
+    0%{
+        top: 0;
+        left: 0;
+    }
+    50%{
+        top: 380px;
+        left: 380px;
+    }
+    100%{
+        top: 0;
+        left: 0;
+    }
+} 
+
+
+.pasek-zmienny{
+    /* margin-top: 10px; */
+    background-color: #0f0f0f;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pasek-zmienny div{
+    height: 20px;
+    transform-origin: left center;
+}
+.pasek-zmienny div{
+    animation: pasek calc(var(--czas) * 1s) linear 0 forwards;
+}
+
+.pasek-zmienny div{
+    background: linear-gradient(to right, #30cfd0 0%, #520ea5 100%);
+}

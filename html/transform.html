@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        
+        
+        <script src="../js/script-transform.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>transform | Animacje w CSS 3</title>
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style-transform.css">
+    </head>
+    <body>
+        <main>
+            <aside id="content">
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="keyframes.html">@keyframes</a>
+                    <a href="javascript:void(0);" class="current">transform</a>
+                    <a href="name.html">animation-name,<br>animation-duration</a>
+                    <a href="delay.html">animation-delay</a>
+                    <a href="iteration.html">animation-iteration-<br>count</a>
+                    <a href="direction.html">animation-direction</a>
+                    <a href="timing.html">animation-timing-<br>function</a>
+                    <a href="play.html">animation-play-state</a>
+                    <a href="fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="animation.html">animation</a>
+                    <a href="transition.html">transition</a>
+
+                </nav>
+            </aside>
+            <section>
+                <h1 class="header">transform</h1>
+                <p>Właściwość transform pozwala na przekształcenie danego elementu w dwóch lub trzech wymiarach, używając jednej z funkcji przekształcania. Do określenia miejsca początkowego przekształcenia używa się właściwości <span class="mono">transform-origin</span>. Istnieje również właściwość <span class="mono">transform-style</span>, określającej, czy potomkowie elementu odziedziczą przekształcenie 3D.</p>
+                <div>
+                    <pre><span class="c-prop">transform-origin:</span> <span class="c-val">left</span>|<span class="c-val">center</span>|<span class="c-val">right</span>|<span class="c-val c-it">dł.</span> <span class="c-val">top</span>|<span class="c-val">center</span>|<span class="c-val">bottom</span>|<span class="c-val c-it">dł.</span> <span class="c-val c-it">długość</span>;<br><span class="c-prop">transform-style:</span> <span class="c-val">flat</span>|<span class="c-val">preserve-3d</span>;</pre>
+                </div>
+                <div id="tab">
+                    <p>Poniższa tabela prezentuje najważniejsze z funkcji przekształcania:</p>
+                    <table>
+                        <tr><th><span class="c-rule">Funkcja</span></th><th><span class="c-rule">Argumenty</span></th><th><span class="c-rule">Działanie</span></th></tr>
+                        <tr><td><span class="c-val">translate</span>()</td><td>przesX, przesY</td><td>Przesunięcie o wektor [x,y]</td></tr>
+                        <tr><td><span class="c-val">translate3d</span>()</td><td>przesX, przesY, przesZ</td><td>Przesunięcie 3D o wektor [x,y,z]</td></tr>
+                        <tr><td><span class="c-val">scale</span>()</td><td>skalaX, skalaY</td><td>Skalowanie w dwóch wymiarach</td></tr>
+                        <tr><td><span class="c-val">scale3d</span>()</td><td>skalaX, skalaY, skalaZ</td><td>Skalowanie w trzech wymiarach</td></tr>
+                        <tr><td><span class="c-val">rotate</span>()</td><td>kątObrotu</td><td>Obrót o zadany kąt</td></tr>
+                        <tr><td><span class="c-val">rotate3d</span>()</td><td>ośX, ośY, ośZ, kątObrotu</td><td>Obrót o zadany kąt według osi X, Y i Z</td></tr>
+                        <tr><td><span class="c-val">skew</span>()</td><td>kątX, kątY</td><td>Pochylenie elementu o zadane kąty</td></tr>
+                        <tr><td><span class="c-val">perspective</span>()</td><td>odległość</td><td>Efekt perspektywy z zadanej odległości</td></tr>
+                        <tr><td><span class="c-val">matrix/matrix3d</span>()</td><td>6 lub 16 wartości</td><td>Przekształcenie oparte na 6- lub 16-elementowej macierzy</td></tr>
+                    </table>
+                </div>
+                <p>Uwaga! W przekształceniach 3D oś Y jest odwrócona - dodatnie wartości znajdują się na dole.</p>
+                <div>
+                    <pre id="function" class="glow-on-hover" onclick="javascript:hideTable();">Podgląd kodu: wybierz funkcję</pre>
+                </div>
+                
+
+                <div class="horizontal" id="horizontal">
+                    <div class="test-area" id="test-area">
+                        <div class="cube" id="box">
+                            <div class="face top"><img src="../img/box-cube.png" alt="box"><p>Góra</p></div>
+                            <div class="face bottom"><img src="../img/box-cube.png" alt="box"><p>Dół</p></div>
+                            <div class="face left"><img src="../img/box-cube.png" alt="box"><p>Lewa</p></div>
+                            <div class="face right"><img src="../img/box-cube.png" alt="box"><p>Prawa</p></div>
+                            <div class="face front"><img src="../img/box-cube.png" alt="box"><p>Przód</p></div>
+                            <div class="face back"><img src="../img/box-cube.png" alt="box"><p>Tył</p></div>
+                        </div>
+                    </div>
+                    <div class="js-code-swap">
+                        <form oninput="javascript:swap();">
+                            <fieldset>
+                                <input type="radio" name="select" id="option-1" value="test-1">
+                                <input type="radio" name="select" id="option-2" value="test-2">
+                                <input type="radio" name="select" id="option-3" value="test-3">
+                                <input type="radio" name="select" id="option-4" value="test-4">
+                                <input type="radio" name="select" id="option-5" value="test-5">
+                                <input type="radio" name="select" id="option-6" value="test-6">
+                                <input type="radio" name="select" id="option-7" value="test-7">
+                                <input type="radio" name="select" id="option-8" value="test-8">
+                                <label for="option-1" class="option-1 glow-on-hover">
+                                    <span>translate()</span>
+                                </label>
+                                <label for="option-2" class="option-2 glow-on-hover">
+                                    <span>translate3d()</span>
+                                </label>
+                                <label for="option-3" class="option-3 glow-on-hover">
+                                    <span>scale()</span>
+                                </label>
+                                <label for="option-4" class="option-4 glow-on-hover">
+                                    <span>scale3d()</span>
+                                </label>
+                                <label for="option-5" class="option-5 glow-on-hover">
+                                    <span>rotate()</span>
+                                </label>
+                                <label for="option-6" class="option-6 glow-on-hover">
+                                    <span>rotate3d()</span>
+                                </label>
+                                <label for="option-7" class="option-7 glow-on-hover">
+                                    <span>skew()</span>
+                                </label>
+                                <label for="option-8" class="option-8 glow-on-hover">
+                                    <span>perspective()</span>
+                                </label>
+                            </fieldset>
+                            <label id="x-label"><input type="range" name="value" id="x" value="50" min="-150" max="150"> Wartość X</label>
+                            <label id="y-label"><input type="range" name="value" id="y" value="50" min="-150" max="150"> Wartość Y</label>
+                            <label id="z-label"><input type="range" name="value" id="z" value="50" min="-150" max="150"> Wartość Z</label>
+                            <label id="deg-label"><input type="range" name="value" id="deg" value="45" min="0" max="360"> Kąt obrotu</label>
+                        </form>
+                    </div>
+                </div>
+                
+            </section>
+            <footer>
+                <button class="glow-on-hover prev" id="glow-on-hover" type="button" onclick="javascript:delayShort('keyframes.html')">
+                    <span>@keyframes</span>
+                </button>
+                <button class="glow-on-hover next" id="glow-on-hover-2" type="button" onclick="javascript:delayShort('name.html')">
+                    <span>animation-name</span>
+                </button>
+            </footer>
+        </main>        
+    </body>
+</html>
