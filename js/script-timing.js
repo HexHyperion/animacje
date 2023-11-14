@@ -4,6 +4,22 @@ let opt6 = document.getElementById("option-6");
 
 
 function changeCode(label){
+    if(label.id == "opt-1"){
+        document.getElementById("tim-swap").innerText = `linear`;
+        box2.style.animationTimingFunction = "linear";
+    }
+    if(label.id == "opt-2"){
+
+    }
+    if(label.id == "opt-3"){
+
+    }
+    if(label.id == "opt-4"){
+
+    }
+    if(label.id == "opt-5"){
+
+    }
     if(label.id == "opt-6") {
         let x = document.getElementById("x").value;
 
@@ -14,7 +30,6 @@ function changeCode(label){
     }
     else {
         document.getElementById("steps-range").style.opacity = "0";
-        document.getElementById("jumps").style.opacity = "0";
 
     }
 
@@ -25,27 +40,6 @@ function changeCode(label){
     console.log();
 }
 
-function changeCode(label){
-    if(label.id == "opt-6") {
-        let x = document.getElementById("x").value;
-
-        document.getElementById("steps-range").style.opacity = "1";
-        document.getElementById("jumps").style.opacity = "1";
-        document.getElementById("tim-swap").innerText = `steps(${x})`;
-        
-    }
-    else {
-        document.getElementById("steps-range").style.opacity = "0";
-        document.getElementById("jumps").style.opacity = "0";
-
-    }
-
-    reloadBoxes()
-
-    box1.style.animationTimingFunction = "linear";
-    updateCode(label)
-    console.log();
-}
 
 function changeText(label) {
     document.getElementById("tim-swap").innerText = label.children[0].innerText 
