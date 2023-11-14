@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Szymon Urbaniak">
+        <meta name="description" content="Zadanie">
+        <meta name="keywords" content="nevergonnagiveyouup">
+        <script src="js/script.js" defer></script>
+        <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
+        <title>Animacje w CSS 3</title>
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link rel="stylesheet" href="css/style-index.css">
+    </head>
+    <body>
+        <main class="index">
+            <aside>
+                <span class="slide">
+                    <a href="#" onclick="toggleSlideMenu()">
+                        <lord-icon src="https://cdn.lordicon.com/nmguxqka.json" trigger="click" stroke="bold" state="hover-slide" colors="primary:#520ea5,secondary:#30cfd0" style="width:80px;height:80px"></lord-icon>
+                    </a>
+                </span>
+                
+                <nav id="menu">
+                    <a href="html/keyframes.html">@keyframes</a>
+                    <a href="html/transform.html">transform</a>
+                    <a href="html/name.html">animation-name,<br>animation-duration</a>
+                    <a href="html/delay.html">animation-delay</a>
+                    <a href="html/iteration.html">animation-iteration-<br>count</a>
+                    <a href="html/direction.html">animation-direction</a>
+                    <a href="html/timing.html">animation-timing-<br>function</a>
+                    <a href="html/play.html">animation-play-state</a>
+                    <a href="html/fill.html">animation-fill-mode</a>
+                    <a href="composition.html">animation-composition</a>
+                    <a href="html/animation.html">animation</a>
+                </nav>
+            </aside>
+            <section>
+                <h1>ANIMACJE W CSS 3</h1>
+                <button class="glow-on-hover" id="glow-on-hover" type="button" onclick="javascript:delay('html/keyframes.html')">
+                    <span>Rozpocznij przygodę</span>
+                </button>
+            </section>
+        </main>        
+    </body>
+</html>
