@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Szymon Urbaniak">
+        <meta name="author" content="Szymon Urbaniak, Bartosz Wątorek, Karolina Ślusarz">
         
         
         <script src="../js/script-iteration.js" defer></script>
+        <script src="../js/zero-range.js" defer></script>
         <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
         <title>animation-iteration-count | Animacje w CSS 3</title>
         <link rel="icon" href="../img/favicon.png" type="image/png">
@@ -63,7 +64,7 @@
 
                 <div class="js-code-swap">
                     <form>
-                    <label><input type="range" name="value" id="x" value="1" min="0" max="11" step="1" oninput="javascript:swapText();">Wykonania</label>
+                    <label  ondblclick="toZero(this)"><input type="range" name="value" id="x" value="1" min="0" max="11" step="1" oninput="javascript:swapText();">Wykonania</label>
                     <button class="glow-on-hover start" type="button" onclick="run_anim()" id="run-delay">
                         <span>Uruchom animację</span>
                     </button>

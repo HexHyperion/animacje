@@ -28,6 +28,7 @@ function changeStyle(cssFile, cssLinkIndex){
     oldlink.href = cssFile;
 }
 
+
 // Zamiana bloku z kodem na podstawie przycisków radio
 function swap(){
     if(document.getElementById("option-1").checked){

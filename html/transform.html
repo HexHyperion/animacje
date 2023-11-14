@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Szymon Urbaniak">
+        <meta name="author" content="Szymon Urbaniak, Bartosz Wątorek, Karolina Ślusarz">
         
         
         <script src="../js/script-transform.js" defer></script>
+        <script src="../js/zero-range.js" defer></script>
         <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
         <title>transform | Animacje w CSS 3</title>
         <link rel="icon" href="../img/favicon.png" type="image/png">
@@ -113,10 +114,10 @@
                                     <span>perspective()</span>
                                 </label>
                             </fieldset>
-                            <label id="x-label"><input type="range" name="value" id="x" value="50" min="-150" max="150"> Wartość X</label>
-                            <label id="y-label"><input type="range" name="value" id="y" value="50" min="-150" max="150"> Wartość Y</label>
-                            <label id="z-label"><input type="range" name="value" id="z" value="50" min="-150" max="150"> Wartość Z</label>
-                            <label id="deg-label"><input type="range" name="value" id="deg" value="45" min="0" max="360"> Kąt obrotu</label>
+                            <label id="x-label" ondblclick="toZero(this)"><input type="range" name="value" id="x" value="50" min="-150" max="150"> Wartość X</label>
+                            <label id="y-label" ondblclick="toZero(this)"><input type="range" name="value" id="y" value="50" min="-150" max="150"> Wartość Y</label>
+                            <label id="z-label" ondblclick="toZero(this)"><input type="range" name="value" id="z" value="50" min="-150" max="150"> Wartość Z</label>
+                            <label id="deg-label" ondblclick="toZero(this)"><input type="range" name="value" id="deg" value="45" min="0" max="360"> Kąt obrotu</label>
                         </form>
                     </div>
                 </div>

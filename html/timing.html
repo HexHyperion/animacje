@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Szymon Urbaniak">
+        <meta name="author" content="Szymon Urbaniak, Bartosz Wątorek, Karolina Ślusarz">
         
         
         <script src="../js/script.js" defer></script>
+        <script src="../js/zero-range.js" defer></script>
         <script src="../js/script-timing.js" defer></script>
         <script src="https://cdn.lordicon.com/lordicon-1.1.0.js" defer></script>
         <title>animation-timing-function | Animacje w CSS 3</title>
@@ -93,8 +94,8 @@
             <label for="option-6" class="option-6 glow-on-hover" onclick="changeCode(this);" id="opt-6">
                 <span>steps(<span id="steps">3</span>)</span>
             </label>
-            <label id="steps-range"><input type="range" name="value" id="x" value="3" min="0" max="15" step="1" oninput="javascript:swapText();" onchange="reloadBoxes(); updateCode(document.getElementById('opt-6'))">Kroki</label>
-            <div id="jumps">
+            <label id="steps-range"><input type="range" name="value" id="x" value="3" min="0" max="15" step="1" oninput="javascript:swapText();" onchange="reloadBoxes(); updateCode(document.getElementById('opt-6'))"  ondblclick="toZero(this)">Kroki</label>
+            <!-- <div id="jumps">
                 <label for="option-7" class="option-7 glow-on-hover" onclick="changeCodeJump(this)">
                     <span>jump-start</span>
                 </label>
@@ -107,7 +108,7 @@
                 <label for="option-10" class="option-10 glow-on-hover" onclick="changeCodeJump(this)">
                     <span>jump-both</span>
                 </label>
-            </div>
+            </div> -->
                 
             <!-- <button class="glow-on-hover start" type="button" onclick="run_anim()" id="run-delay">
                 <span>Uruchom animację</span>
